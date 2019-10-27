@@ -1,0 +1,37 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 18px;
+    line-height: 150%;
+    color: #333;
+    background: #efeee7;
+  }
+h1{
+    color: teal;
+}
+
+.topnav{
+    background-color: ffff;
+
+}
+
+
+.topnav a{
+    float: right;
+    color: grey;
+    text-align: center;
+    padding-right: 2px;
+
+}
+
+.topnav a.active{
+    background-color: teal;
+    text-align: center;
+    display: inline-block;
+
+}
+
+p {
+    border: 960px solid
+}
