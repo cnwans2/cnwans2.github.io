@@ -1,0 +1,23 @@
+.content{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: antiquewhite
+    padding 30px
+    width 100%;
+}
+
+#display{
+    width: 100%;
+
+}
+
+#slider {
+    width: 100%
+}
+
+.form-check {
+    text-align:center;
+    padding 10px;
+    width: 5px;
+}
+
