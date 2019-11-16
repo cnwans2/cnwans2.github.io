@@ -10,6 +10,8 @@ var startBtn = document.getElementById("start");
 var initialsEl = document.getElementById("initials");
 var feedbackEl = document.getElementById("feedback");
 
+console.log(startBtn); 
+
 
 function startQuiz() {
     var startScreen = document.getElementById("start-screen")
@@ -58,11 +60,12 @@ function questionClick() {
     }
 
     currentQuestion++ 
-
-
-    
 }
 
+startBtn.onclick = function() {
+    startBtn.style.display= "none"
+    startQuiz();
+}
 
 //fuction save high score 
 //function to end quiz
