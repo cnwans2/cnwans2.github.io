@@ -64,7 +64,6 @@ function questionClick() {
 }
 
 
-//fuction clock ticker
 //fuction save high score 
 //function to end quiz
 
