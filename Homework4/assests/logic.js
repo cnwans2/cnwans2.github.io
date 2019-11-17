@@ -67,6 +67,28 @@ startBtn.onclick = function() {
     startQuiz();
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //fuction save high score 
 //function to end quiz
 
