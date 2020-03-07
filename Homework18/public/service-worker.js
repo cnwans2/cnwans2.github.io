@@ -1,25 +1,7 @@
-const FILES_TO_CACHE = [
-    "/",
-    "/index.html",
-    "/favorites.html",
-    "/topic.html",
-    "/assets/css/style.css",
-    "/dist/app.bundle.js",
-    "/dist/favorites.bundle.js",
-    "/dist/topic.bundle.js"
-  ];
-  
-  
+// The code that we used in one of our actitivies is similar to what we are required to do for the homework, So i 
+//use some of the same code? 
   const PRECACHE = "precache-v1";
   const RUNTIME = "runtime";
-  
-  self.addEventListener("install", event => {
-    event.waitUntil(
-      caches.open(PRECACHE)
-        .then(cache => cache.addAll(FILES_TO_CACHE))
-        .then(self.skipWaiting())
-    );
-  });
   
   // The activate handler takes care of cleaning up old caches.
   self.addEventListener("activate", event => {
