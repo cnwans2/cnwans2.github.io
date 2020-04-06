@@ -1,12 +1,12 @@
 var express = require("express");
-
+//establish a port for the application 
 var PORT = process.env.PORT || 8000;
 var app = express();
 
-// Serve static content for the app from the "public" directory in the application directory.
+// running express through the public foler to run the application 
 app.use(express.static("public"));
 
-// Parse application body
+// Parse the package json 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
