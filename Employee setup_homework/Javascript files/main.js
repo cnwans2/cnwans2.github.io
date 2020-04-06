@@ -1,11 +1,12 @@
 const path = require("path");
 const fs = require("fs");
-
+//creating a path 
 const templatesDir = path.resolve(__dirname, "../templates");
 
 const render = employees => {
   const html = [];
-
+//this code is being used to make render the information from the user into the correct employee position.
+//it will show up in the html 
   html.push(employees
     .filter(employee => employee.getRole() === "Manager")
     .map(manager => renderManager(manager))
@@ -22,7 +23,7 @@ const render = employees => {
   return renderMain(html.join(""));
 
 };
-
+//placeholders that will be replaced by the user inputs
 const renderManager = manager => {
   let template = fs.readFileSync(path.resolve(templatesDir, "manager.html"), "utf8");
   template = replacePlaceholders(template, "name", manager.getName());
