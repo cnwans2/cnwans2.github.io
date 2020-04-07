@@ -4,8 +4,6 @@ const db = require("./db");
 require("console.table");
 
 init();
-
-// Display logo text, load main prompts
 function init() {
   const logoText = logo({ name: "Employee Manager" }).render();
 
@@ -13,7 +11,7 @@ function init() {
 
   loadMainPrompts();
 }
-
+// giving a list of values that would be agrannged in sql
 async function loadMainPrompts() {
   const { choice } = await prompt([
     {
@@ -73,15 +71,10 @@ async function loadMainPrompts() {
           name: "Remove Department",
           value: "REMOVE_DEPARTMENT"
         },
-        {
-          name: "Quit",
-          value: "QUIT"
-        }
       ]
     }
   ]);
-
-  // Call the appropriate function depending on what the user chose
+//calls the function when the user says so
   switch (choice) {
     case "VIEW_EMPLOYEES":
       return viewEmployees();
@@ -234,31 +227,6 @@ async function updateEmployeeRole() {
       choices: roleChoices
     }
   ]);
-
-  await db.updateEmployeeRole(employeeId, roleId);
-
-  console.log("Updated employee's role");
-
-  loadMainPrompts();
-}
-
-async function updateEmployeeManager() {
-  const employees = await db.findAllEmployees();
-
-  const employeeChoices = employees.map(({ id, first_name, last_name }) => ({
-    name: `${first_name} ${last_name}`,
-    value: id
-  }));
-
-  const { employeeId } = await prompt([
-    {
-      type: "list",
-      name: "employeeId",
-      message: "Which employee's manager do you want to update?",
-      choices: employeeChoices
-    }
-  ]);
-
   const managers = await db.findAllPossibleManagers(employeeId);
 
   const managerChoices = managers.map(({ id, first_name, last_name }) => ({
@@ -303,7 +271,7 @@ async function addRole() {
   const role = await prompt([
     {
       name: "title",
-      message: "What is the name of the role?"
+      message: "What is the name your role?"
     },
     {
       name: "salary",
@@ -312,7 +280,7 @@ async function addRole() {
     {
       type: "list",
       name: "department_id",
-      message: "Which department does the role belong to?",
+      message: "Which department do you belong to?",
       choices: departmentChoices
     }
   ]);
