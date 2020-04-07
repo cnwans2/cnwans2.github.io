@@ -1,4 +1,4 @@
-//workout data that will be stored in the backend.s
+// getting and storing all the workouts in the backend so that the user has something to look back on.
 
 fetch("/api/workouts/range")
   .then(response => {
@@ -13,6 +13,22 @@ API.getWorkoutsInRange()
 
   function generatePalette() {
     const arr = [
+    "#003f5c",
+    "#2f4b7c",
+    "#665191",
+    "#a05195",
+    "#d45087",
+    "#f95d6a",
+    "#ff7c43",
+    "ffa600",
+    "#003f5c",
+    "#2f4b7c",
+    "#665191",
+    "#a05195",
+    "#d45087",
+    "#f95d6a",
+    "#ff7c43",
+    "ffa600"
   ]
 
   return arr;
@@ -93,7 +109,21 @@ function populateChart(data) {
           label: "Pounds",
           data: pounds,
           backgroundColor: [
-
+            "rgba(255, 99, 132, 0.2)",
+            "rgba(54, 162, 235, 0.2)",
+            "rgba(255, 206, 86, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(153, 102, 255, 0.2)",
+            "rgba(255, 159, 64, 0.2)"
+          ],
+          borderColor: [
+            "rgba(255, 99, 132, 1)",
+            "rgba(54, 162, 235, 1)",
+            "rgba(255, 206, 86, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(153, 102, 255, 1)",
+            "rgba(255, 159, 64, 1)"
+          ],
           borderWidth: 1
         }
       ]
